@@ -4,7 +4,6 @@ import random
 def is_prime(n):
     """
     Tests to see if a number is prime.
-
     >>> is_prime(2)
     True
     >>> is_prime(11)
@@ -12,11 +11,11 @@ def is_prime(n):
     >>> is_prime(8)
     False
     """
-    count=0
-    for i in range(2,n):
-        if n%i==0:
-            count+=1
-    if count==0:
+    count = 0
+    for i in range(2, n):
+        if n % i == 0:
+            count += 1
+    if count == 0:
         return True
     else:
         return False
@@ -25,45 +24,43 @@ def is_prime(n):
 def gcd(a, b):
     """
     Euclid's algorithm for determining the greatest common divisor.
-
     >>> gcd(12, 15)
     3
     >>> gcd(3, 7)
     1
     """
-    while a!=0 and b!=0:
-        if a>b:
-            a=a%b
+    while a != 0 and b != 0:
+        if a > b:
+            a = a % b
         else:
-            b=b%a
-    return a+b
+            b = b % a
+    return a + b
 
 
 def multiplicative_inverse(e, phi):
     """
     Euclid's extended algorithm for finding the multiplicative
     inverse of two numbers.
-
     >>> multiplicative_inverse(7, 40)
     23
     """
-    i=0
-    z_list=[]
-    x_list=[0]
-    y_list=[1]
-    phi_first=phi
-    while e>=1:
-        z_list.append(phi//e)
-        _=phi%e
-        phi=e
-        e=_
-        i+=1
-    z_list1=list(reversed(z_list))
-    for count in range(i-1):
+    i = 0
+    z_list = []
+    x_list = [0]
+    y_list = [1]
+    phi_first = phi
+    while e >= 1:
+        z_list.append(phi // e)
+        _ = phi % e
+        phi = e
+        e = _
+        i += 1
+    z_list1 = list(reversed(z_list))
+    for count in range(i - 1):
         x_list.append(y_list[count])
-        y_list.append(x_list[count]-y_list[count]*z_list1[count+1])
-    y=y_list[-1]
-    d=y%phi_first
+        y_list.append(x_list[count] - y_list[count] * z_list1[count + 1])
+    y = y_list[-1]
+    d = y % phi_first
     return d
 
 
