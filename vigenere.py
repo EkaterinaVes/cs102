@@ -1,6 +1,14 @@
 plaintext=input('Слово? -')
 keyword=input('Ключ? -')
 def encrypt_vigenere(plaintext, keyword):
+    """
+    >>> encrypt_vigenere("PYTHON", "A")
+    'PYTHON'
+    >>> encrypt_vigenere("python", "a")
+    'python'
+    >>> encrypt_vigenere("ATTACKATDAWN", "LEMON")
+    'LXFOPVEFRNHR'
+    """
     ciphertext=''
     keyword_1=''
     for i in range(len(plaintext)):
