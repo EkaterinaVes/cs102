@@ -26,7 +26,7 @@ def encrypt_vigenere(plaintext, keyword):
             if (num_key+num_word) > 90:
                 num_word -= 26
         else:
-            if (num_key+num_word) > 120:
+            if (num_key+num_word) > 122:
                 num_word -= 26
         ciphertext += chr(num_word+num_key)
     return ciphertext
